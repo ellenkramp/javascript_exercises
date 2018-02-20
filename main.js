@@ -76,3 +76,39 @@ function factors(num) {
     document.write(newArray);
 }
 factors(20);
+
+//Caesar Cipher
+
+function caesarCipher(string, diff) {
+    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+    "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v",
+    "w", "x", "y", "z"];
+    var returnString = "";
+    string = string.toLowerCase();
+    for (var i = 0; i < string.length; i++) {
+        //for simplicity, create var to store character at i
+        var letter = string.charAt(i);
+        //for simplicity, create var to store the index in the alphabet of letter
+        var alphaIndex = alphabet.indexOf(letter);
+        //if the character in the string at index i is a letter in alphabet
+        if (alphaIndex >= 0) {
+            //add the diff to the current index to find the new index
+            newIndex = alphaIndex + diff;
+            //include a contingency if the new index exceeds our indices
+            if (newIndex >= 26) {
+                //subtract 26 to find the new index
+                newIndex = alphaIndex + diff - 26;
+            }
+            //define new letter by adding the difference in indices
+            var newLetter = alphabet[newIndex];
+            //add newly defined letter to new string
+            returnString += newLetter;
+        }
+        else {
+            returnString += letter;
+        }
+    }
+    document.write(returnString);
+}
+
+caesarCipher('Travhf jvgubhg rqhpngvba vf yvxr fvyire va gur zvar', 13);
