@@ -112,3 +112,35 @@ function caesarCipher(string, diff) {
 }
 
 caesarCipher('Travhf jvgubhg rqhpngvba vf yvxr fvyire va gur zvar', 13);
+
+function rockPaperScissors(player1, player2) {
+    if (player1 === player2) {
+        return 'draw';
+    }
+    if (player1 === 'rock') {
+        if (player2 === 'scissors') {
+            return 'player 1 wins';
+        }
+        if (player2 === 'paper') {
+            return 'player 2 wins';
+    }
+}
+    if (player1 === 'paper') {
+        if (player2 === 'rock') {
+            return 'player 1 wins'
+        }
+        if (player2 === 'scissors') {
+            return 'player 1 wins'
+        }
+    }
+    if (player1 === 'scissors') {
+        if (player2 === 'paper') {
+            return 'player 1 wins'
+        }
+        if (player2 === 'rock') {
+            return 'player 2 wins'
+        }
+    }
+}
+
+document.write(rockPaperScissors('scissors', 'rock'));
